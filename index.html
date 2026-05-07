@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceiling Pakar Malaysia | Premium Ceiling Solutions</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=DM+Sans:wght@400;500&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: 'DM Sans', sans-serif; color: #1e293b; }
+    .font-heading { font-family: 'Outfit', sans-serif; }
+    .elegant-title { font-family: 'Playfair Display', serif; }
+
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    @keyframes pulse-glow { 0%,100%{opacity:0.3} 50%{opacity:0.8} }
+    @keyframes fade-up { from { opacity:0; transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes rotate-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    @keyframes hint-bounce { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-8px); } }
+    
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+    .animate-fade-up { animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+    .animate-rotate-slow { animation: rotate-slow 40s linear infinite; }
+    .animate-hint { animation: hint-bounce 2s ease-in-out infinite; }
+
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+
+    .product-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .product-card:hover { transform: translateY(-10px); }
+    
+    .glass-panel { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .hero-gradient { background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%); }
+    
+    .rainbow-ball {
+      background: linear-gradient(45deg, #ff0000, #ff8800, #ffff00, #00ff00, #0000ff, #8b00ff);
+      background-size: 400% 400%;
+      animation: rainbow-shift 5s ease infinite;
+      border: 3px solid white;
+    }
+    @keyframes rainbow-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    #visualizer-modal { transition: opacity 0.3s ease, visibility 0.3s; }
+    #visualizer-modal.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    
+    .preview-frame { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+    .image-transition { transition: opacity 0.4s ease-in-out; }
+    .loader-dots div { animation: loader-dots 0.6s infinite alternate; }
+    .loader-dots div:nth-child(2) { animation-delay: 0.2s; }
+    .loader-dots div:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes loader-dots { from { opacity: 0.2; transform: translateY(0); } to { opacity: 1; transform: translateY(-4px); } }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-slate-50">
+  <div id="app" class="w-full h-full overflow-x-hidden">
+   
+   <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-12 py-4 flex items-center justify-between" id="main-nav">
+    <div class="flex items-center gap-3 group cursor-pointer">
+     <div class="p-2 bg-blue-500 rounded-lg shadow-lg shadow-blue-500/20 group-hover:scale-110 transition">
+      <svg width="24" height="24" viewBox="0 0 36 36" fill="white"><rect x="4" y="8" width="28" height="3" rx="1.5" /><rect x="8" y="14" width="20" height="2" rx="1" opacity="0.7" /><rect x="6" y="19" width="24" height="2" rx="1" opacity="0.5" /></svg>
+     </div>
+     <span class="font-heading font-bold text-white text-xl tracking-tight">Ceiling Pakar</span>
+    </div>
+    <div class="hidden md:flex items-center gap-10 text-sm font-medium text-slate-300">
+     <a href="#products" class="hover:text-white transition-colors">Solutions</a>
+     <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+     <a href="#why" class="hover:text-white transition-colors">Experience</a>
+     <a href="#contact" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full transition-all shadow-md">Get Quote</a>
+    </div>
+   </nav>
+
+   <section class="hero-gradient relative min-h-screen flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+     <div class="absolute inset-0 opacity-40 mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-position: center;"></div>
+     <div class="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] animate-pulse-glow"></div>
+    </div>
+    <div class="relative z-10 container mx-auto px-6 md:px-12 pt-24 pb-12">
+     <div class="max-w-4xl">
+      <div class="animate-fade-up stagger-1">
+       <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/10 rounded-full text-blue-300 text-xs font-semibold uppercase tracking-widest mb-8">
+        <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span> Malaysia's Leading Ceiling Experts
+       </span>
+      </div>
+      <h1 id="hero-title" class="font-heading font-800 text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] mb-8 animate-fade-up stagger-2">Refining the Space <span class="text-blue-500">Above You.</span></h1>
+      <p id="hero-subtitle" class="text-slate-400 text-lg md:text-2xl max-w-2xl mb-12 leading-relaxed animate-fade-up stagger-3">Specialized plaster, aluminum, and acoustic ceiling systems engineered for performance and architectural beauty.</p>
+      <div class="flex flex-wrap gap-5 animate-fade-up stagger-4">
+       <a href="#products" id="cta-btn" class="px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all shadow-2xl shadow-blue-600/30">Explore Solutions</a>
+       <button onclick="toggleVisualizer(true)" class="px-10 py-5 glass-panel text-white font-bold rounded-2xl hover:bg-white/10 transition-all flex items-center gap-2"><i data-lucide="palette" class="w-5 h-5"></i> Your inspiration room</button>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <section id="products" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-blue-600 font-bold text-sm tracking-widest uppercase mb-4">What we do</div>
+     <h2 id="products-heading" class="font-heading font-bold text-4xl md:text-6xl text-slate-900 mb-20 leading-tight">Mastering Vertical Space with Precision</h2>
+     <div class="grid lg:grid-cols-3 gap-10">
+      <div class="product-card group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 p-4">
+       <div class="h-64 relative rounded-2xl overflow-hidden mb-6">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+       </div>
+       <div class="px-4 pb-4">
+        <h3 class="font-heading font-bold text-2xl text-slate-900 mb-3">Plaster Ceiling</h3>
+        <p class="text-slate-600 mb-6 leading-relaxed">Seamless finishes with custom ornamental moldings and hidden lighting coves.</p>
+       </div>
+      </div>
+      <div class="product-card group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 p-4">
+       <div class="h-64 relative rounded-2xl overflow-hidden mb-6">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+       </div>
+       <div class="px-4 pb-4">
+        <h3 class="font-heading font-bold text-2xl text-slate-900 mb-3">Aluminum Systems</h3>
+        <p class="text-slate-600 mb-6 leading-relaxed">Durable, linear, and grid-based solutions for airports and industrial hubs.</p>
+       </div>
+      </div>
+      <div class="product-card group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 p-4">
+       <div class="h-64 relative rounded-2xl overflow-hidden mb-6">
+        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+       </div>
+       <div class="px-4 pb-4">
+        <h3 class="font-heading font-bold text-2xl text-slate-900 mb-3">Acoustic Control</h3>
+        <p class="text-slate-600 mb-6 leading-relaxed">High-NRC rated mineral fiber panels for studios and meeting rooms.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- Visualizer Modal -->
+   <div id="visualizer-modal" class="fixed inset-0 z-[200] hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-6xl h-[90vh] rounded-[2rem] overflow-hidden shadow-2xl relative flex flex-col md:flex-row">
+      <button onclick="toggleVisualizer(false)" class="absolute top-6 right-6 z-50 p-2 bg-slate-100 hover:bg-slate-200 rounded-full transition"><i data-lucide="x" class="w-6 h-6"></i></button>
+      
+      <div class="h-1/2 md:h-full md:flex-1 relative flex items-center justify-center p-4 md:p-12 overflow-hidden bg-slate-100 shrink-0">
+          <div class="preview-frame w-full h-full max-w-5xl relative group">
+              <div id="image-loader" class="absolute inset-0 z-20 flex items-center justify-center bg-slate-100/40 backdrop-blur-sm rounded-2xl opacity-0 pointer-events-none transition-opacity duration-300">
+                  <div class="loader-dots flex gap-1"><div class="w-2 h-2 bg-blue-600 rounded-full"></div><div class="w-2 h-2 bg-blue-600 rounded-full"></div><div class="w-2 h-2 bg-blue-600 rounded-full"></div></div>
+              </div>
+              <img id="room-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="image-transition w-full h-full object-cover rounded-2xl opacity-0" onload="handleImageLoad()" onerror="handleImageError(this)">
+              <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center z-10 pointer-events-none">
+                  <div class="bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 text-white text-[10px] md:text-xs font-medium tracking-wide">
+                      <span id="current-label">Modern + Plaster</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div id="sidebar" class="flex-1 bg-white flex flex-col overflow-hidden border-t md:border-t-0 md:border-l border-slate-100">
+          <div class="p-6 md:p-10 flex-1 overflow-y-auto">
+              <div class="mb-10">
+                  <h1 class="elegant-title text-2xl text-slate-900 mb-2">Your inspiration room</h1>
+                  <div class="h-1 w-12 bg-blue-600 rounded-full mb-3"></div>
+                  <p class="text-sm text-slate-500 font-medium leading-relaxed">Visualize our systems in your architectural style before you decide.</p>
+              </div>
+              <div class="space-y-10">
+                  <div>
+                      <div class="flex justify-between items-end mb-4"><h2 class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">01 / Environment</h2><span class="text-xs font-bold text-blue-600" id="room-badge">Modern</span></div>
+                      <div class="grid grid-cols-3 gap-2" id="room-buttons"></div>
+                  </div>
+                  <div>
+                      <div class="flex justify-between items-end mb-4"><h2 class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">02 / Surface Material</h2><span class="text-xs font-bold text-blue-600" id="ceiling-badge">Plaster</span></div>
+                      <div class="grid grid-cols-2 gap-3" id="ceiling-buttons"></div>
+                  </div>
+                  <div class="pt-6 border-t border-slate-100">
+                      <div class="relative bg-slate-50 p-4 rounded-xl border border-slate-200/50">
+                          <p id="designer-quote" class="text-xs md:text-sm italic text-slate-600 leading-relaxed font-medium">"Select combinations to reveal the design intent."</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="p-6 bg-slate-50 border-t border-slate-100">
+              <a href="#contact" onclick="toggleVisualizer(false)" class="w-full block text-center bg-blue-600 text-white font-bold py-4 rounded-xl">Get This Look</a>
+          </div>
+      </div>
+    </div>
+   </div>
+
+   <section id="contact" class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="bg-slate-900 rounded-[3rem] overflow-hidden flex flex-col lg:flex-row">
+        <div class="lg:w-1/2 p-12 lg:p-20 bg-blue-600">
+          <h2 class="font-heading font-bold text-4xl text-white mb-6">Let's Talk Project</h2>
+          <div class="space-y-6 text-white"><p>+60 16 550 6664</p><p>admin@hmadigital.com</p></div>
+        </div>
+        <div class="lg:w-1/2 p-12 lg:p-20 bg-slate-900">
+          <form id="contact-form" class="space-y-6"><input type="text" placeholder="Name" class="w-full bg-slate-800 border-slate-700 rounded-xl p-4 text-white"><button class="w-full bg-blue-600 text-white font-bold py-5 rounded-xl">Send Brief</button></form>
+        </div>
+      </div>
+    </div>
+   </section>
+
+   <footer class="py-12 bg-slate-950 text-center text-slate-600 text-sm">© 2024 Ceiling Pakar Malaysia.</footer>
+
+   <!-- Floating Buttons -->
+   <div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4 items-center">
+    <button onclick="toggleVisualizer(true)" class="rainbow-ball w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-white transition-all hover:scale-110 active:scale-95 group relative">
+      <i data-lucide="palette" class="w-8 h-8"></i>
+      <span class="absolute right-20 bg-white text-slate-900 px-4 py-2 rounded-full text-[10px] font-extrabold shadow-xl whitespace-nowrap animate-hint border border-slate-100 flex items-center gap-1">
+        <span class="text-pink-500">✨</span> (Click to Play)
+      </span>
+    </button>
+    <a href="https://wa.link/q17b7n" target="_blank" class="w-16 h-16 bg-emerald-500 hover:bg-emerald-600 rounded-full shadow-2xl flex items-center justify-center text-white transition-all hover:scale-110 active:scale-95 group relative">
+      <i data-lucide="message-circle" class="w-8 h-8"></i>
+    </a>
+   </div>
+  </div>
+
+  <script>
+  const rooms = [
+    { id: 'classical', name: 'Classical Style', shortName: 'Classical', icon: 'landmark' },
+    { id: 'modern', name: 'Modern Minimal', shortName: 'Modern', icon: 'maximize' },
+    { id: 'cozy', name: 'Cozy Living', shortName: 'Cozy', icon: 'coffee' },
+    { id: 'industrial', name: 'Industrial Loft', shortName: 'Industrial', icon: 'factory' },
+    { id: 'office', name: 'Corporate Office', shortName: 'Office', icon: 'briefcase' },
+  ];
+  const ceilings = [
+    { id: 'plaster', name: 'Plaster Finish', shortName: 'Plaster', icon: 'layout' },
+    { id: 'aluminum', name: 'Aluminum Panels', shortName: 'Aluminum', icon: 'layers' },
+    { id: 'wood', name: 'Wooden Textures', shortName: 'Wood', icon: 'trees' },
+    { id: 'grid', name: 'Acoustic Grid', shortName: 'Grid', icon: 'grid-3x3' },
+  ];
+  const designerQuotes = {
+    'classical-plaster': "Plaster ceilings in classical spaces create an airy backdrop that lets ornate details shine.",
+    'classical-aluminum': "Aluminum panels introduce a subtle modernity to classical rooms, adding a contemporary contrast.",
+    'classical-wood': "Wooden beams frame classical beauty perfectly, adding layers of heritage.",
+    'classical-grid': "Note: Grid ceilings are functional. Best suited for high-traffic public heritage spaces.",
+    'modern-plaster': "Flat plaster defines modern minimalism. Clean lines emphasize architectural purity.",
+    'modern-aluminum': "Aluminum panels embody modern industry. Geometric precision amplify sharp aesthetics.",
+    'modern-wood': "Wood humanizes modern design. Organic warmth softens contemporary edges.",
+    'modern-grid': "In modern settings, grids provide structural rhythm. Great for open-plan areas.",
+    'cozy-plaster': "Matte plaster absorbs light gently, creating warm shadows that enhance an intimate atmosphere.",
+    'cozy-aluminum': "Soft metallic reflections bounce ambient light, adding a layer of sophisticated glow.",
+    'cozy-wood': "Wooden ceilings are the soul of coziness. Natural textures wrap around the space.",
+    'industrial-plaster': "Raw, unfinished plaster celebrates industrial authenticity, grounding lofts in genuine history.",
+    'industrial-aluminum': "Exposed metal systems reflect industrial heritage, emphasizing functional beauty.",
+    'industrial-wood': "Reclaimed wood adds history to raw environments, softening the 'hard' edges.",
+    'office-grid': "Grid systems optimize office functionality, accommodating acoustics in an orderly rhythm.",
+    'office-wood': "Humanizing professional spaces with wood reduces workplace stress while maintaining sophistication.",
+    'office-plaster': "Clean plaster surfaces provide a distraction-free environment for professional focus.",
+    'industrial-grid': "Exposed grid work highlights structural honesty in industrial-themed conversions."
+  };
+  const imageMap = {
+    'classical-plaster': 'https://imgur.com/5FJOIos.jpg',
+    'classical-aluminum': 'https://imgur.com/Pu10uqR.jpg',
+    'classical-wood': 'https://imgur.com/s2Sf9Uu.jpg',
+    'classical-grid': 'https://imgur.com/5FJOIos.jpg',
+    'modern-plaster': 'https://imgur.com/hxzUEpw.jpg',
+    'modern-aluminum': 'https://imgur.com/2spD76U.jpg',
+    'modern-wood': 'https://imgur.com/yaA4w8W.jpg',
+    'modern-grid': 'https://imgur.com/hxzUEpw.jpg',
+    'cozy-plaster': 'https://imgur.com/ledXkjS.jpg',
+    'cozy-aluminum': 'https://imgur.com/RCQLYIT.jpg',
+    'cozy-wood': 'https://imgur.com/8il3eFs.jpg',
+    'cozy-grid': 'https://imgur.com/ledXkjS.jpg',
+    'industrial-plaster': 'https://imgur.com/n5Iig36.jpg',
+    'industrial-aluminum': 'https://imgur.com/7VxzrVc.jpg',
+    'industrial-wood': 'https://imgur.com/wN3mhPL.jpg',
+    'industrial-grid': 'https://imgur.com/n5Iig36.jpg',
+    'office-plaster': 'https://imgur.com/xGJlMt2.jpg',
+    'office-aluminum': 'https://imgur.com/xGJlMt2.jpg',
+    'office-wood': 'https://imgur.com/xGJlMt2.jpg',
+    'office-grid': 'https://imgur.com/lOgVQ95.jpg',
+  };
+
+  let selectedRoom = 'modern';
+  let selectedCeiling = 'plaster';
+
+  function toggleVisualizer(show) {
+    const modal = document.getElementById('visualizer-modal');
+    if (!modal) return;
+    modal.classList.toggle('hidden', !show);
+    document.body.style.overflow = show ? 'hidden' : '';
+    if (show) updateView();
+  }
+
+  function handleImageLoad() {
+    const img = document.getElementById('room-image');
+    const loader = document.getElementById('image-loader');
+    if (img) img.classList.remove('opacity-0');
+    if (loader) loader.classList.add('opacity-0');
+  }
+
+  function handleImageError(img) {
+    img.src = 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800';
+  }
+
+  function updateView() {
+    const img = document.getElementById('room-image');
+    const loader = document.getElementById('image-loader');
+    if (!img || !loader) return;
+    
+    const key = `${selectedRoom}-${selectedCeiling}`;
+    const nextSrc = imageMap[key] || 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800';
+
+    if (img.src !== nextSrc) {
+        loader.classList.remove('opacity-0');
+        img.classList.add('opacity-0');
+        img.src = nextSrc;
+    }
+
+    const roomBadge = document.getElementById('room-badge');
+    const ceilingBadge = document.getElementById('ceiling-badge');
+    const designerQuote = document.getElementById('designer-quote');
+    const currentLabel = document.getElementById('current-label');
+
+    if (currentLabel) currentLabel.textContent = `${selectedRoom.toUpperCase()} + ${selectedCeiling.toUpperCase()}`;
+    if (roomBadge) roomBadge.textContent = selectedRoom;
+    if (ceilingBadge) ceilingBadge.textContent = selectedCeiling;
+    if (designerQuote) designerQuote.textContent = `"${designerQuotes[key] || "Select combinations to reveal the design intent."}"`;
+    
+    renderButtons();
+  }
+
+  function renderButtons() {
+    const rBtns = document.getElementById('room-buttons');
+    const cBtns = document.getElementById('ceiling-buttons');
+    if (rBtns) rBtns.innerHTML = rooms.map(r => `<button onclick="selectedRoom='${r.id}';updateView()" class="flex flex-col items-center p-2 rounded-xl border-2 transition ${r.id === selectedRoom ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-slate-100 hover:border-slate-300'}"><i data-lucide="${r.icon}" class="w-4 h-4 mb-1"></i><span class="text-[9px] font-bold uppercase">${r.shortName}</span></button>`).join('');
+    if (cBtns) cBtns.innerHTML = ceilings.map(c => `<button onclick="selectedCeiling='${c.id}';updateView()" class="flex items-center gap-2 p-3 rounded-xl border-2 transition ${c.id === selectedCeiling ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-slate-100 hover:border-slate-300'}"><i data-lucide="${c.icon}" class="w-4 h-4"></i><span class="text-[10px] font-bold uppercase">${c.shortName}</span></button>`).join('');
+    lucide.createIcons();
+  }
+
+  // Element SDK
+  if (window.elementSdk && typeof window.elementSdk.init === 'function') {
+      window.elementSdk.init({
+        defaultConfig: { hero_title: 'Refining the Space Above You.' },
+        onConfigChange: (c) => { 
+            const ht = document.getElementById('hero-title');
+            if (ht && c.hero_title) ht.innerHTML = c.hero_title.replace('Above You.', '<span class="text-blue-500">Above You.</span>');
+        }
+      });
+  }
+  lucide.createIcons();
+</script>
+</body>
+</html>
